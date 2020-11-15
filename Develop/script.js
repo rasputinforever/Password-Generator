@@ -16,12 +16,14 @@ generateBtn.addEventListener("click", writePassword);
 //
 
 
+// basic building blocks to be improved for final submission
 
-
+// setting up variables
 var userOptions = ["abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789", " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"]
 var userPasswordpossibles = ''
 var userPassworddisplayed = ''
 
+// digits must be from 8 to 128, gotta check and force the issue if they fail to do this
 var passwordLength = prompt("How many digits (please enter a number from 8 to 128)?")
 
 //check if the desired length is in set parameters
@@ -44,8 +46,6 @@ for (var i = 0; i < userQueries.length; i++) {
   }
 }
 
-console.log(userPasswordpossibles)
-
 //creates the password. Random number must be multiplied by the length of the string of possible chars, then rounded to a whole number, then appended to the final password.
 //turn this into a function
 for (var i = 0; i < passwordLength; i++) {
@@ -53,4 +53,5 @@ for (var i = 0; i < passwordLength; i++) {
   userPassworddisplayed = userPassworddisplayed + newPasswordchar
 }
 
+//final product
 console.log(userPassworddisplayed)
