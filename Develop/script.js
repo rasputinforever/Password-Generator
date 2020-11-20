@@ -19,6 +19,8 @@ generateBtn.addEventListener("click", writePassword);
 // basic building blocks to be improved for final submission
 
 // setting up variables
+function generatePassword() {
+
 var userOptions = ["abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789", " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"]
 var userPasswordpossibles = ''
 var userPassworddisplayed = ''
@@ -50,8 +52,12 @@ for (var i = 0; i < userQueries.length; i++) {
 //turn this into a function
 for (var i = 0; i < passwordLength; i++) {
   var newPasswordchar = userPasswordpossibles.charAt(Math.round(Math.random() * userPasswordpossibles.length))
-  userPassworddisplayed = userPassworddisplayed + newPasswordchar
+  userPassworddisplayed = userPassworddisplayed + newPasswordchar;
 }
 
+//translate to desired var
+password = userPassworddisplayed
+
 //final product
-console.log(userPassworddisplayed)
+return password;
+}
