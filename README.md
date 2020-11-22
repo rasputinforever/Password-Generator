@@ -1,93 +1,38 @@
-# 03 JavaScript: Password Generator
+# Password Generator
 
-## Your Task
+Erik Portillo, 11-21-2020
 
-This week’s homework requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+## Purpose
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+This tool delivers a password of length from 8 to 128 characters long with optional character sets that may be included.
 
-## User Story
+## Interaction Summary
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+The user is presented with a simple interaction: click the button to create a password. When clicked, the user is prompted for:
+* The character length of the password
+* If the user wants Lower-Case letters
+* If the user wants Upper-Case letters
+* If the user wants Numbers
+* If the user wants Special Characters
 
-## Acceptance Criteria
+If the user makes selections that go outside of the scope of this tool they are prompted to re-try and enter selections that fall within that scope (e.g. if they choose password legths outside of range 8 to 128 or fail to select "OK" on any of the character sets).
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+## Inner Functionaity
 
-## Mock-Up
+### Starting Point: Page Load
+When the page loads, JavaScript creates a button then assigns an Event Listerner to that button. The associated function is called writePassword. It calls a function called generatePassword, takes the output of that function, and applies it to the DOM via QuerySelector on the #Password ID object.
 
-The following image shows the web application's appearance and functionality:
+### Action: Password Generator
+When called, the password generator asks the user, via prompt for "number of characters".
 
-![password generator demo](./Assets/03-javascript-homework-demo.png)
+A for loop within an if function detects if the user-selected Character Length is outside of range 8 to 128. Each loop it prompts for a new entry with relevant warning text. Until the user selects an appropriate entry the loop continues.
 
-## Grading Requirements
+The function then asks, via confirm, for yes/no on each of the four possible character sets. A new array is created storing each of the prompt answers.
 
-This homework is graded based on the following criteria: 
+A for loop is initiated that, for each TRUE entry it references in the answers-array, it appends a cooresponding array of "possible character sets" to a new variable, "userPasswordpossibles". 
 
-### Technical Acceptance Criteria: 40%
+Once complete, the function runs an if to check that the user selected at least ONE character set, which it does by looking at the length of "userPasswordpossibles". It returns an error message if it's length less than 1.
 
-* Satisfies all of the above acceptance criteria plus the following:
+Finally, once it passes each of these checks, Math.Random is applied in a for loop. The user-submitted character-length request determines the number of iterations. On each iteration, a new variable "password" is appended a random character from "userPassworddisplayed". Math.random is rounded to an integer and multiplied by the length of "userPasworddisplayed"; that number is used as the reference on charAt which is used to select a random, single character, at position random, from "userPassworddisplayed". 
 
-  * The homework should not produce any errors in the console when you inspect it using Chrome DevTools.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+Once the loop completes, the newly created password is returned to the function that calls it.

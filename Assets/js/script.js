@@ -13,7 +13,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//
+
 
 
 // basic building blocks to be improved for final submission
@@ -35,17 +35,25 @@ if (passwordLength < 8 || passwordLength > 128) {
 }
 
 //confirm each question regarding what characters to use in password
+var isLowercase = confirm("Do you want to inlcude Lower-Case letters?")
 var isUpperscase = confirm("Do you want to inlcude Upper-Case letters?")
 var isNumbers = confirm("Do you want to inlcude Numbers?")
 var isSpecials = confirm("Do you want to inlcude special characters?")
 
-var userQueries = [true, isUpperscase, isNumbers, isSpecials]
+var userQueries = [isLowercase, isUpperscase, isNumbers, isSpecials]
 
 //loops through each boolean as to whether or not to include that same index within the available sets of chars
 for (var i = 0; i < userQueries.length; i++) {
   if (userQueries[i]) {
     userPasswordpossibles = userPasswordpossibles + userOptions[i]
   }
+}
+
+
+//if user fails to make any selections for possible characters, return an error message.
+if (userPasswordpossibles.length === 0) {
+  password = "You must make positive selections! Click the button to start again."
+  return password;
 }
 
 //creates the password. Random number must be multiplied by the length of the string of possible chars, then rounded to a whole number, then appended to the final password.
