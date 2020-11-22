@@ -58,7 +58,7 @@ Once the loop completes, the newly created password is returned to the function 
 
 ![failed to select a character set](Assets/images/fail_2.PNG)
 
-### References
+## References
 
 **Live URL:** [Password Generator](https://rasputinforever.github.io/Password-Generator/)
 **Created By:** Erik Portillo, 11-21-2020
