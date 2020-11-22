@@ -45,6 +45,8 @@ Once the loop completes, the newly created password is returned to the function 
 ![successful password creation](Assets/images/success.PNG)
 
 **Character-Limit Failure**
+
+
 ![failed to choose an appropriate number](Assets/images/fail_1.PNG)
 
 **Character-Contents Failure**
