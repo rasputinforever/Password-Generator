@@ -1,6 +1,5 @@
 # Password Generator
 
-Erik Portillo, 11-21-2020
 
 ## Purpose
 
@@ -36,3 +35,19 @@ Once complete, the function runs an if to check that the user selected at least 
 Finally, once it passes each of these checks, Math.Random is applied in a for loop. The user-submitted character-length request determines the number of iterations. On each iteration, a new variable "password" is appended a random character from "userPassworddisplayed". Math.random is rounded to an integer and multiplied by the length of "userPasworddisplayed"; that number is used as the reference on charAt which is used to select a random, single character, at position random, from "userPassworddisplayed". 
 
 Once the loop completes, the newly created password is returned to the function that calls it.
+
+### Preview
+
+On-Load
+![initial loaded page](./assests/images/on_load.PNG)
+Password Displayed
+![successful password creation](./assests/images/success.PNG)
+Character-Limit Failure
+![failed to choose an appropriate number](./assests/images/fail_1.PNG)
+Character-Contents Failure
+![failed to select a character set](./assests/images/fail_2.PNG)
+
+### References
+
+**Live URL:** [Password Generator](https://rasputinforever.github.io/Password-Generator/)
+**Created By:** Erik Portillo, 11-21-2020
