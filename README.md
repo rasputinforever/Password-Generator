@@ -39,13 +39,13 @@ Once the loop completes, the newly created password is returned to the function 
 ### Preview
 
 On-Load
-![initial loaded page](./assests/images/on_load.PNG)
+![initial loaded page](Assets/images/on_load.PNG)
 Password Displayed
-![successful password creation](./assests/images/success.PNG)
+![successful password creation](Assets/images/success.PNG)
 Character-Limit Failure
-![failed to choose an appropriate number](./assests/images/fail_1.PNG)
+![failed to choose an appropriate number](Assets/images/fail_1.PNG)
 Character-Contents Failure
-![failed to select a character set](./assests/images/fail_2.PNG)
+![failed to select a character set](Assets/images/fail_2.PNG)
 
 ### References
 
