@@ -36,15 +36,18 @@ Finally, once it passes each of these checks, Math.Random is applied in a for lo
 
 Once the loop completes, the newly created password is returned to the function that calls it.
 
-### Preview
+## Preview
 
-On-Load
+**On-Load**
 ![initial loaded page](Assets/images/on_load.PNG)
-Password Displayed
+
+**Password Displayed**
 ![successful password creation](Assets/images/success.PNG)
-Character-Limit Failure
+
+**Character-Limit Failure**
 ![failed to choose an appropriate number](Assets/images/fail_1.PNG)
-Character-Contents Failure
+
+**Character-Contents Failure**
 ![failed to select a character set](Assets/images/fail_2.PNG)
 
 ### References
