@@ -39,9 +39,13 @@ Once the loop completes, the newly created password is returned to the function 
 ## Preview
 
 **On-Load**
+
+
 ![initial loaded page](Assets/images/on_load.PNG)
 
 **Password Displayed**
+
+
 ![successful password creation](Assets/images/success.PNG)
 
 **Character-Limit Failure**
@@ -50,6 +54,8 @@ Once the loop completes, the newly created password is returned to the function 
 ![failed to choose an appropriate number](Assets/images/fail_1.PNG)
 
 **Character-Contents Failure**
+
+
 ![failed to select a character set](Assets/images/fail_2.PNG)
 
 ### References
